@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    system-ui,
+    sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --selection: rgba(100, 116, 139, 0.2);
+  --token-string: #10b981;
+  --token-number: #f59e0b;
+  --token-keyword: #a78bfa;
+  --token-property: #38bdf8;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html:not(.dark) {
+  color-scheme: light;
+  --selection: rgba(100, 116, 139, 0.15);
+  --token-string: #059669;
+  --token-number: #b45309;
+  --token-keyword: #7c3aed;
+  --token-property: #0284c7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: var(--selection);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+pre,
+code,
+textarea,
+kbd {
+  font-family:
+    "JetBrains Mono",
+    "Fira Code",
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.4);
+}
+
+textarea {
+  tab-size: 2;
+}
+
+.token-string {
+  color: var(--token-string);
+}
+
+.token-number {
+  color: var(--token-number);
+}
+
+.token-keyword {
+  color: var(--token-keyword);
+}
+
+.token-property {
+  color: var(--token-property);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+@media (max-width: 640px) {
+
+  pre,
+  textarea,
+  code {
+    font-size: 12px;
+  }
+}
